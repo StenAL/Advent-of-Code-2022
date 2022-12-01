@@ -1,4 +1,10 @@
 day=$1
+if [[ -z "$1" ]]; then
+  echo "missing argument for day"
+  echo "usage: ./fetchInput DAY"
+  exit 1;
+fi
+
 inputFile="src/input/day$day.txt"
 if [[ ! -f $inputFile ]]; then
   curl -sS --cookie "session=$(cat cookie.txt)" "https://adventofcode.com/2022/day/$day/input" -o $inputFile
