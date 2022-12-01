@@ -1,3 +1,5 @@
+set -euo pipefail
+
 day=$1
 if [[ -z "$1" ]]; then
   echo "missing argument for day"
